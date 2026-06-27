@@ -1,0 +1,15 @@
+[project]
+name = "pgvector-practice"
+version = "0.1.0"
+description = "Practice project for PostgreSQL pgvector tutorial"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "psycopg[binary]>=3.2",
+  "pgvector>=0.4",
+  "python-dotenv>=1.0",
+]
+
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
