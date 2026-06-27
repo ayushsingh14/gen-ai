@@ -1,5 +1,5 @@
 import os
-from typing import List, Optional
+from typing import List
 
 import psycopg
 from dotenv import load_dotenv
@@ -7,10 +7,11 @@ from pgvector.psycopg import register_vector
 
 load_dotenv()
 
-DATABASE_URL = os.getenv(
-    "DATABASE_URL",
-    "postgresql://pgvector_user:secret@localhost:5432/pgvector_db",
-)
+DATABASE_URL = os.getenv("DATABASE_URL")
+if not DATABASE_URL:
+    raise RuntimeError(
+        "DATABASE_URL is not set. Copy .env.example to .env and set DATABASE_URL before running."
+    )
 
 
 def get_connection():

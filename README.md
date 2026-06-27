@@ -14,7 +14,7 @@ Practice repo for PostgreSQL `pgvector` experiments.
 
 ## Setup
 
-1. Copy `.env.example` to `.env`
+1. Copy `.env.example` to `.env` and keep `.env` private
 2. Start the database:
    ```bash
    docker compose up -d
@@ -27,6 +27,8 @@ Practice repo for PostgreSQL `pgvector` experiments.
    ```bash
    python -m pgvector_practice.cli
    ```
+
+> `.env` is ignored by `.gitignore`, so it won’t be committed if you keep it in the repo root.
 
 ## Notes
 
